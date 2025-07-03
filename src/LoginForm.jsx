@@ -76,7 +76,7 @@ export default function LoginForm() {
       <form onSubmit={handleSubmit}>
         {/* eğer email ile ilgili bir hata varsa label'a hasError class'ı ekle */}
         <label
-          className={`form-input-line ${errors.password ? "hasError" : ""}`}
+          className={`form-input-line ${errors.email ? "hasError" : ""}`}
           data-testid="email-label"
           style={{ display: "block" }}
         >
@@ -93,7 +93,7 @@ export default function LoginForm() {
           {/* Email ile ilgili bir hata yoksa alttaki spani hiç gösterme */}
           <span
             className="error-message"
-            role="email-error"
+            data-testid="email-error"
             style={{ display: errors.email ? "block" : "none" }}
           >
             {/* Email ile ilgili bir hata mesajı varsa burada görünmeli */}
@@ -124,6 +124,7 @@ export default function LoginForm() {
             style={{ display: errors.password ? "block" : "none" }}
           >
             {/* Password ile ilgili bir hata mesajı varsa burada görünmeli */}
+            {errors.password ? errorMessages.password : ""}
           </span>
         </label>
 
@@ -148,13 +149,11 @@ export default function LoginForm() {
         <button
           className="send-button"
           data-testid="send"
-          disabled={false}
-          onClick={handleSubmit}
+          disabled={!isFormValid()}
           style={{ backgroundColor: isFormValid() ? "green" : "gray" }}
         >
           {/* formdaki veriler geçerli ise "Gönder", değilse "Gönderilemiyor" yazmalı */}
           {isFormValid() ? "Gönder" : "Gönderilemiyor"}
-          Gönder
         </button>
       </form>
     </div>

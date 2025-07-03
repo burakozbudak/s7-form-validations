@@ -1,9 +1,9 @@
 {
-  "stats": "1 passed, 12 failed out of 13",
+  "stats": "4 passed, 9 failed out of 13",
   "tests": [
     {
       "name": "Sayfa açıldığında Gönder butonu disabled mı?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Login componentinde isValid statei tanımlanmış mı?",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Kullanım koşulları kabul edilmediğinde buton disabled kalmaya devam ediyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "State değişimine bağlı işlemler yapmak için useEffect hooku kullanılmış mı?",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Form doğru bilgiler ile doldurulunca Gönder butonu enabled oluyor mu?",
-      "state": "fail"
+      "state": "pass"
     }
   ]
 }
